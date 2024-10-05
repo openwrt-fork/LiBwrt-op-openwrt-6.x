@@ -6,9 +6,9 @@ PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL=$(PROJECT_GIT)/project/firmware/qca-wireless.git
-PKG_SOURCE_DATE:=2024-07-04
-PKG_SOURCE_VERSION:=fcdb2e74a6e4518266679292071c8f47f87b4df2
-PKG_MIRROR_HASH:=bfa2388468eb74221c7d1696089bb8ad3ca2b3b27ebff657f1962a6bbe6ccc11
+PKG_SOURCE_DATE:=2024-09-14
+PKG_SOURCE_VERSION:=2ca41d755d93dce53748ee6906318cc7d3829a8c
+PKG_MIRROR_HASH:=e7447649e044a2759f6768eaec6de330238e6166bc01703979844be94fe2f817
 PKG_FLAGS:=nonshared
 
 include $(INCLUDE_DIR)/package.mk
@@ -32,6 +32,7 @@ ALLWIFIBOARDS:= \
 	asus_rt-ax89x \
 	buffalo_wxr-5950ax12 \
   cmiot_ax18 \
+	cambiumnetworks_xe34 \
 	cmcc_rm2-6 \
 	compex_wpq873 \
 	dynalink_dl-wrx36 \
@@ -61,6 +62,7 @@ ALLWIFIBOARDS:= \
   redmi_ax5-jdcloud \
 	redmi_ax6 \
 	spectrum_sax1v1k \
+	tplink_eap660hd-v1 \
 	wallys_dr40x9 \
   xiaomi_ax1800 \
 	xiaomi_ax3600 \
@@ -173,6 +175,7 @@ $(eval $(call generate-ipq-wifi-package,arcadyan_aw1000,Arcadyan AW1000))
 $(eval $(call generate-ipq-wifi-package,asus_rt-ax89x,Asus RT-AX89X))
 $(eval $(call generate-ipq-wifi-package,buffalo_wxr-5950ax12,Buffalo WXR-5950AX12))
 $(eval $(call generate-ipq-wifi-package,cmiot_ax18,CMIOT AX18))
+$(eval $(call generate-ipq-wifi-package,cambiumnetworks_xe34,Cambium Networks XE3-4))
 $(eval $(call generate-ipq-wifi-package,cmcc_rm2-6,CMCC RM2-6))
 $(eval $(call generate-ipq-wifi-package,compex_wpq873,Compex WPQ-873))
 $(eval $(call generate-ipq-wifi-package,dynalink_dl-wrx36,Dynalink DL-WRX36))
@@ -202,6 +205,7 @@ $(eval $(call generate-ipq-wifi-package,redmi_ax5,Redmi AX5))
 $(eval $(call generate-ipq-wifi-package,redmi_ax5-jdcloud,Redmi AX5 JDCloud))
 $(eval $(call generate-ipq-wifi-package,redmi_ax6,Redmi AX6))
 $(eval $(call generate-ipq-wifi-package,spectrum_sax1v1k,Spectrum SAX1V1K))
+$(eval $(call generate-ipq-wifi-package,tplink_eap660hd-v1,TP-Link EAP660 HD v1))
 $(eval $(call generate-ipq-wifi-package,wallys_dr40x9,Wallys DR40X9))
 $(eval $(call generate-ipq-wifi-package,xiaomi_ax1800,Xiaomi AX1800))
 $(eval $(call generate-ipq-wifi-package,xiaomi_ax3600,Xiaomi AX3600))

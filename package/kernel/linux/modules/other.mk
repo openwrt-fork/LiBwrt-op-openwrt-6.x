@@ -58,7 +58,7 @@ define KernelPackage/bluetooth
 	$(LINUX_DIR)/drivers/bluetooth/btusb.ko \
 	$(LINUX_DIR)/drivers/bluetooth/btintel.ko \
 	$(LINUX_DIR)/drivers/bluetooth/btrtl.ko \
-	$(LINUX_DIR)/drivers/bluetooth/btmtk.ko@ge5.17
+	$(LINUX_DIR)/drivers/bluetooth/btmtk.ko
   AUTOLOAD:=$(call AutoProbe,bluetooth rfcomm bnep hidp hci_uart btusb)
 endef
 
@@ -597,7 +597,7 @@ define KernelPackage/mtdtests
 	$(LINUX_DIR)/drivers/mtd/tests/mtd_speedtest.ko \
 	$(LINUX_DIR)/drivers/mtd/tests/mtd_stresstest.ko \
 	$(LINUX_DIR)/drivers/mtd/tests/mtd_subpagetest.ko \
-	$(LINUX_DIR)/drivers/mtd/tests/mtd_test.ko@ge6.6 \
+	$(LINUX_DIR)/drivers/mtd/tests/mtd_test.ko \
 	$(LINUX_DIR)/drivers/mtd/tests/mtd_torturetest.ko
 endef
 
@@ -643,7 +643,8 @@ define KernelPackage/ramoops
   TITLE:=Ramoops (pstore-ram)
   DEFAULT:=m if ALL_KMODS
   KCONFIG:=CONFIG_PSTORE_RAM \
-	CONFIG_PSTORE_CONSOLE=y
+	CONFIG_PSTORE_CONSOLE=y \
+	CONFIG_PSTORE_PMSG=y
   DEPENDS:=+kmod-pstore +kmod-reed-solomon
   FILES:= $(LINUX_DIR)/fs/pstore/ramoops.ko
   AUTOLOAD:=$(call AutoLoad,30,ramoops,1)
